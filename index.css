@@ -1,0 +1,267 @@
+@font-face {font-family: Luci;src: url(/font/Lucida\ Sans\ Unicode.ttf);}
+@font-face {font-family: adk;src: url(/font/AryaRD.ttf);}
+
+body{
+    background-color: #dddddd; 
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+
+/* Navigation Bar */
+.navbar {
+    /* border: 1px solid red; */
+    position: fixed;
+    height: 45px;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: white;
+}
+.menu{
+    /* border: 1px solid red; */
+    font-size: 26px;
+    font-family: adk;
+    color: #04bd79;
+    text-decoration: none;
+    padding: 0px 20px;
+    padding-top: 8px;
+    padding-bottom: 2px;
+}
+.menu:hover{
+    color:rgb(212, 212, 212);
+    transition-duration: 0.5s;
+}
+.logo{
+    font-size: 33px !important;
+    font-family: adk;
+    color: #04bd79;
+    overflow: hidden;
+    padding: 0px 10px !important;
+    font-weight: bold;
+    margin-top: 0px !important;
+}
+.nav{
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.nav-right{
+    margin-right: 10px;
+    float: right;
+    margin-top: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Toggle Dark And Light Mode */
+.themebox{
+	/* border: 1px solid red; */
+	background-color: #dddddd;
+	display: flex;
+	border-radius: 50px;
+	height: 26px;
+	width: 45px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2px 4px;
+	position: relative;
+    transition: background 0.2s linear;
+}
+.themebox:hover{
+    cursor: pointer;
+}
+.moon{
+	/* border: 1px solid yellow; */
+	margin-top: 3px;
+	margin-left: 4px;
+}
+.sun{
+	/* border: 1px solid yellow; */
+	margin-top: 3px;
+	margin-left: 4px;
+}
+.ball{
+	background-color: white;
+	position: absolute;
+	height: 22px;
+	width: 22px;
+	border-radius: 50px;
+	transition: transform 0.2s linear;
+}
+.checkbox{
+	opacity: 0;
+	position: absolute;
+}
+.checkbox:checked + .themebox .ball{
+	transform: translateX(24px);
+}
+
+
+
+/* Toggle Theme White/Dark */
+.body-dark{
+    background-color: #1F1D2B;
+    transition: background 0.2s linear;
+}
+.navbar-dark{
+    background-color: #292A39 !important;
+    transition: background 0.2s linear;
+}
+.themebox-dark{
+    background-color: rgb(34, 34, 34);
+    transition: background 0.2s linear;
+}
+
+
+
+
+
+
+
+
+
+
+/* Content Section */
+.section{
+    margin-top: 50px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    border-radius: 5px;
+    height: auto;
+    width: 97.5%;
+    /* border: 1px dashed red; */
+    background-color: white;
+    transition: background 0.2s linear;
+    padding: 10px;
+    margin: 5px 0px;
+}
+/* .box:hover{
+    background-color: #04bd79;
+    transition: background 0.4s linear;
+} */
+.box-dark{
+    background-color: #292A39 !important;
+    transition: background 0.2s linear;
+
+}
+.mainhead{
+    /* border: 1px solid red; */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    font-size: 26px;
+    font-family: adk;
+    padding: 5px 5px;
+    text-decoration: none;
+    transition: background 0.2s linear;
+
+}
+.mainhead-dark{
+    color: #dddddd !important;
+    transition: background 0.2s linear;
+}
+.date{
+    font-size: 16px;
+    font-family: adk;
+    color: #04bd79;
+    padding: 0px 5px;
+}
+
+@media screen and (min-width:1550px){
+    .box{
+        width: 98%;
+    }
+    .mainhead{
+        font-size: 40px;
+    }
+    .date{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .section{
+        margin-top: 5px;
+    }
+    .navbar{
+        position: relative !important;
+    }
+    .mainhead{
+        font-size: 24px;
+        padding: 0px;
+    }
+    .box{
+        width: 95%;
+    }
+    .date{
+        font-size: 12px;
+        padding-left: 0px !important;
+    }
+}
+
+@media screen and (max-width:430px){
+    .navbar{
+        height: 30px;
+    }
+    .logo{
+        font-size: 26px !important;
+        padding-left: 3px !important;
+    }
+    .nav-right{
+        margin-top: 3px;
+        margin-right: 3px;
+    }
+    .themebox{
+        height: 20px;
+	    width: 38px;
+    }
+    .ball{
+        height: 18px;
+	    width: 18px;
+    }
+    .checkbox:checked + .themebox .ball{
+        transform: translateX(20px);
+    }
+    .sun{
+        margin-left: 0px !important;
+    }
+
+
+    .section{
+        margin-top: 5px;
+    }
+    .mainhead{
+        font-size: 16px;
+        padding: 0px;
+    }
+    .box{
+        width: 90%;
+    }
+    .date{
+        font-size: 10px;
+        padding-bottom: 0px;
+        padding-left: 0px !important;
+    }
+}
+
+

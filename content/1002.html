@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secons in Windows Taskbar Clock</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section1 id="section1" class="section1">
+        <p id="mainhead" class="mainhead">How to Show Seconds in Windows Taskbar Clock (10:30:09 AM)</p>
+        <p class="content1">1. Search Registry Editor And Run the Registry Editor</p>
+        <img id="mainimg" src="/images/1002/Screenshot1.jpg"
+            alt="Search and Run Registry Editor">
+        <div>
+            <p class="content1">2.Now Paste this Following Path to Registry Editor Address Bar...</p>
+
+            <input class="copytext" type="text" value="Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
+                id="myInput">
+            <span id="copypath" class="button" onclick="CopyFunction()">Copy Path</span>
+
+            <script>
+                function CopyFunction() {
+                    var copyText = document.getElementById("myInput");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    document.getElementById("copypath").innerHTML = "Copied";
+                }
+            </script>
+        </div>
+        <img id="mainimg" src="/images/1002/Screenshot2.jpg" alt="Copy and Paste Path">
+        <p class="content1">3. Right Click on "Advanced" folder and Create a New DWORD 32-bit Key Called "ShowSecondsInSystemClock".</p>
+        <img src="/images/1002/Screenshot3.jpg" alt="Create New Key Called ShowSeconsInSystemClock" id="mainimg">
+        <p class="content1">4. Double Click on "ShowSecondsInSystemClock" And Set Value Data "1" And Click on "OK".</p>
+        <img src="/images/1002/Screenshot4.jpg" alt="Set Value Data" id="mainimg">
+        <p class="content1">5. Close Registry Editor and Restart your Computer.</p>
+        <p class="content1">6. It's Done</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+        <p>&ensp;</p>
+
+
+
+
+
+
+        <p class="mainhead">How to Remove Seconds from Taskbar Clock (10:30:10 AM)</p>
+        <p class="content1">1. Follow 1 and 2 Step and Delete "ShowSecondsInSystemClock" Key.</p>
+        <img src="/images/1002/Screenshot5.jpg" alt="Delete The DWORD Key" id="mainimg">
+        <p class="content1">2. Confirm your Key Deletion and Click "Yes".</p>
+        <img src="/images/1002/Screenshot6.jpg" alt="Confirm Delete" id="mainimg">
+        <p class="content1">3. Restart your Computer.
+            <br> 4. And It's Done.
+        </p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+    </section1>
+
+
+</body>
+</html>

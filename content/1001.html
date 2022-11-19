@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome in Windows Context Menu</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section1 id="section1" class="section1">
+        <p id="mainhead" class="mainhead">How to Add Any Application in Windows Context Menu (Right Click Option)
+            (Chrome Browser)
+        </p>
+        <p class="content">The Registry Key allows you to have a Custom Application on the Right-Click Context
+            Menu. For instance, You can put up Calculator, Notepad, or WhatsApp on the Right-Click Context Menu. I like to have it on the Right-Click Menu for Convenience.
+        </p>
+        <p class="content1">1. Search Registry Editor And Run as Administrator</p>
+        <img id="mainimg" src="/images/1001/Screenshot1.jpg" alt="Search and Run Registry Editor as Admin">
+        <div>
+            <p class="content1">2.Now Paste this Following Path to Registry Editor Address Bar...</p>
+
+            <input class="copytext" type="text" value="HKEY_CLASSES_ROOT\Directory\Background\shell" id="myInput">
+            <span id="copypath" class="button" onclick="CopyFunction()">Copy Path</span>
+
+            <script>
+                function CopyFunction() {
+                    var copyText = document.getElementById("myInput");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    document.getElementById("copypath").innerHTML = "Copied";
+                }
+            </script>
+        </div>
+        <img id="mainimg" src="/images/1001/Screenshot2.jpg" alt="Copy and Paste Path">
+        <p class="content1">3. Right Click on "Shell" folder and Create a New Key Called "Chrome".</p>
+        <img src="/images/1001/Screenshot3.jpg" alt="Create New Key Called Chrome" id="mainimg">
+        <p class="content1">4. Right Click on "Chrome" folder and Create a New Key Called "Command".</p>
+        <img src="/images/1001/Screenshot4.jpg" alt="Create a New Key Called Command" id="mainimg">
+        <p class="content1">5. Now Search Chrome in Start Menu, Right Click on Chrome And Click to "Open
+            File
+            Location".</p>
+        <img src="/images/1001/Screenshot5.jpg" alt="Open Chrome File Location" id="mainimg">
+        <p class="content1">6. It will Redirect you to File Explorer. Now Right Click on "Chrome.exe" and
+            Click on
+            "Open File Location".</p>
+        <img src="/images/1001/Screenshot6.jpg" alt="Chrome File Location" id="mainimg">
+        <p class="content1">7. Now, In File Explorer, Go to Home Tab and Select "Copy Path".</p>
+        <img src="/images/1001/Screenshot7.jpg" alt="Copy Path" id="mainimg">
+        <p class="content1">8. Go Back to Registry Editor, On Right Side, Double Click on "Default". And
+            Paste the
+            Copied Path in "Value Data". And Click on
+            "OK".
+        </p>
+        <img src="/images/1001/Screenshot8.jpg" alt="Copy Path to Value Data" id="mainimg">
+        <p class="content1">9. It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+        <p>&ensp;</p>
+
+
+
+
+
+
+        <p class="mainhead">How to Add Chrome Incognito Tab in Windows Context Menu</p>
+        <p class="content">I use it Slightly Different. I used the Chrome Incognito Tab too often for Research
+            Purposes
+            and I like to have it on the Right-Click Menu for Convenience.</p>
+        <p class="content1">1. Follow Above 1 and 2 Step.
+            <br> 2. Right Click on "Shell" folder and Create New Key Called "Chrome Incognito".
+            <br> 3. Now, Right Click on "Chrome Incognito" folder and Create New Key Called "Command".
+        </p>
+        <img src="/images/1001/Screenshot9.jpg" alt="Chrome Incognito Tab" id="mainimg">
+        <p class="content1">4. Now Follow Step 5,6 and 7.
+            <br>
+            5. Right Side, Double Click on "Default" and Paste the Copied Path. And set value Data and Make sure to Write "--Incognito" after Path. Click on "OK"
+        </p>
+        <img src="/images/1001/Screenshot10.jpg" alt="Incognito Path" id="mainimg">
+        <p class="content1">6. It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+        <p>&ensp;</p>
+
+
+
+
+
+
+
+
+
+
+        <p class="mainhead">How to Remove Any Application from Windows Context Menu</p>
+        <p class="content1">1. Follow 1 and 2 Step and Delete the "Chrome" Folder.</p>
+        <img src="/images/1001/Screenshot11.jpg" alt="Run Registry Editor as Admin" id="mainimg">
+        <p class="content1">2. Confirm your Key Deletion and Click "Yes".</p>
+        <img src="/images/1001/Screenshot12.jpg" alt="Delete Chrome Folder" id="mainimg">
+        <p class="content1">3. It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+    </section1>
+
+
+</body>
+
+</html>

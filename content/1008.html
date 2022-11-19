@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete/Disable Cortana</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section id="section1" class="section1">
+        <p class="mainhead">How to Delete/Disable Cortana in Windows 10</p>
+        <p class="content">Let’s get straight to the point. How do you disable Cortana? Ok Previously, Windows allowed the option to turn off Cortana. But, now there’s none. Although Cortana has been separated from the Start menu, now it just lies vaguely on the taskbar. Moreover, Cortana has become restrictive now and it only uses Bing and Edge over everything. The only way to remove it now is via the registry editor.</p>
+        <p class="content1">1. Search and Run Registry editor as Administrator.</p>
+        <img src="/images/1008/Screenshot1.jpg" alt="search and run regedit" id="mainimg">
+        <div>
+            <p class="content1">2.Now Paste this Following Path to Registry Editor Address Bar...</p>
+
+            <input class="copytext" type="text" value="Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows"
+                id="myInput">
+            <span id="copypath" class="button" onclick="CopyFunction()">Copy Path</span>
+
+            <script>
+                function CopyFunction() {
+                    var copyText = document.getElementById("myInput");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    document.getElementById("copypath").innerHTML = "Copied";
+                }
+            </script>
+        </div>
+        <img src="/images/1008/Screenshot2.jpg" alt="paste path" id="mainimg">
+        <p class="content1">3. Right click on "Windows" and Create New key called "Windows Search". <br> Skip this step if "Windows Search" folder is already available.</p>
+        <img src="/images/1008/Screenshot3.jpg" alt="create windows search folder" id="mainimg">
+        <p class="content1">4. Now, Right click on "Windows Search" and Create new DWORD 32-bit key Called "AllowCortana".</p>
+        <img src="/images/1008/Screenshot4.jpg" alt="create new DWORD key called allowcortana" id="mainimg">
+        <p class="content1">5. Double click on "AllowCortana" and Make sure that it's value data is "0".</p>
+        <img src="/images/1008/Screenshot5.jpg" alt="make sure value data is 0" id="mainimg">
+        <p class="content1">6. Restart your Computer.</p>
+        <p class="content1">7. It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+        <p>&ensp;</p>
+
+
+
+
+
+        <p class="mainhead">Back to Default</p>
+        <p class="content1">1. Follow 1 and 2 step and Delete "AllowCortana" key.</p>
+        <img src="/images/1008/Screenshot11.jpg" alt="delete key" id="mainimg">
+        <p class="content1">2. Restart yout Computer. <br> 3. And It's Done.</p>
+        <p class="content1">Note:- This Trick will also Delete Cortana from your Taskbar.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+
+    </section>
+    
+
+</body>
+</html>

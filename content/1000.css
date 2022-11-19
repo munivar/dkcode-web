@@ -1,0 +1,267 @@
+@font-face {font-family: Luci;src: url(/font/Lucida\ Sans\ Unicode.ttf);}
+@font-face {font-family: adk;src: url(/font/AryaRD.ttf);}
+
+body{
+    background-color: #dddddd; 
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    transition: background 0.2s linear;
+}
+
+
+
+
+
+/* ***Navigation Bar*** */
+.navbar {
+    /* border: 1px solid red; */
+    position: fixed;
+    height: 45px;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: white;
+    transition: background 0.2s linear;
+}
+.menu{
+    /* border: 1px solid red; */
+    font-size: 26px;
+    font-family: adk;
+    color: #04bd79;
+    text-decoration: none;
+    padding: 0px 20px;
+    padding-top: 8px;
+    padding-bottom: 2px;
+}
+.menu:hover{
+    color:rgb(212, 212, 212);
+    transition-duration: 0.5s;
+}
+.logo{
+    font-size: 33px !important;
+    font-family: adk;
+    color: #04bd79;
+    overflow: hidden;
+    padding: 0px 10px !important;
+    font-weight: bold;
+    margin-top: 0px !important;
+}
+.nav{
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.nav-right{
+    margin-right: 10px;
+    float: right;
+    margin-top: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ***Toggle Dark And Light Mode*** */
+.themebox{
+	/* border: 1px solid red; */
+	background-color: #dddddd;
+	display: flex;
+	border-radius: 50px;
+	height: 26px;
+	width: 45px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2px 4px;
+	position: relative;
+    transition: background 0.2s linear;
+}
+.themebox:hover{
+    cursor: pointer;
+}
+.moon{
+	/* border: 1px solid yellow; */
+	margin-top: 3px;
+	margin-left: 4px;
+}
+.sun{
+	/* border: 1px solid yellow; */
+	margin-top: 3px;
+	margin-left: 4px;
+}
+.ball{
+	background-color: white;
+	position: absolute;
+	height: 22px;
+	width: 22px;
+	border-radius: 50px;
+	transition: transform 0.2s linear;
+}
+.checkbox{
+	opacity: 0;
+	position: absolute;
+}
+.checkbox:checked + .themebox .ball{
+	transform: translateX(24px);
+}
+
+
+
+/* ***Toggle Theme White/Dark*** */
+.body-dark{
+    background-color: #1F1D2B;
+    transition: background 0.2s linear;
+    color: #dddddd;
+}
+.navbar-dark{
+    background-color: #292A39 !important;
+    transition: background 0.2s linear;
+}
+.themebox-dark{
+    background-color: rgb(34, 34, 34);
+    transition: background 0.2s linear;
+}
+
+
+
+
+
+
+
+/* ***Content*** */
+.section1{
+    /* border: 1px dashed red; */
+    margin-top: 50px;
+    position: absolute;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+.mainhead{
+    /* border: 1px dashed red; */
+    font-size: 30px;
+    font-family: adk;
+    color: #04bd79;
+    padding-left: 10px;
+}
+.content{
+    font-size: 18px;
+    font-family: adk;
+    padding-left: 10px;
+}
+.content1{
+    font-size: 24px;
+    font-family: adk;
+    padding-left: 10px;
+}
+#mainimg{
+    width: 95%;
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid black;
+}
+.copytext{
+    font-size: 16px;
+    font-family: adk;
+    text-decoration: none;
+    border: 2px solid #15161b;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 50%;
+    margin-left: 10px;
+}
+.button{
+    font-size: 16px;
+    font-family: adk;
+    border: 1px solid #292A39;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0px 5px;
+    background-color: #04bd79;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: #0fec9b;
+    transition: background 0.2s linear;
+}
+.dashed-line{
+    padding-left: 10px;
+}
+
+
+
+@media screen and (min-width:1550px){
+    .section1{
+        width: 75%;
+    }
+}
+
+
+@media screen and (max-width:1550px){
+    .section1{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:1025px){
+    .section1{
+        width: 100%;
+    }
+    .mainhead{
+        font-size: 24px;
+        display: flex;
+        flex-wrap: wrap !important;
+    }
+    .content{
+        font-size: 14px;
+    }
+    .content1{
+        font-size: 18px;
+    }
+    .menu{
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width:430px){
+    .navbar{
+        height: 30px;
+    }
+    .logo{
+        font-size: 26px !important;
+    }
+    .nav-right{
+        margin-top: 3px;
+        margin-right: 3px;
+    }
+    .themebox{
+        height: 20px;
+	    width: 38px;
+    }
+    .ball{
+        height: 18px;
+	    width: 18px;
+    }
+    .checkbox:checked + .themebox .ball{
+        transform: translateX(20px);
+    }
+    .sun{
+        margin-left: 0px !important;
+    }
+    .section1{
+        width: 100%;
+        margin-top: 20px;
+    }
+    #mainimg{
+        width: 93%;
+    }
+}

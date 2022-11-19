@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disable Bing Search Result</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section class="section1" id="section1">
+        <p class="mainhead">How to Disable Bing Search Result on StartMenu in Windows 10</p>
+        <p class="content1">1. Search and Run Registry Editor as Administrator</p>
+        <img src="/images/1007/Screenshot1.jpg" alt="run regedit as admin" id="mainimg">
+        <div>
+            <p class="content1">2.Now Paste this Following Path to Registry Editor Address Bar...</p>
+
+            <input class="copytext" type="text" value="Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search"
+                id="myInput">
+            <span id="copypath" class="button" onclick="CopyFunction()">Copy Path</span>
+
+            <script>
+                function CopyFunction() {
+                    var copyText = document.getElementById("myInput");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    document.getElementById("copypath").innerHTML = "Copied";
+                }
+            </script>
+        </div>
+        <img src="/images/1007/Screenshot2.jpg" alt="paste path" id="mainimg">
+        <p class="content1">3. Right click on "Search" folder and Create new DWORD 32-bit key called "BingSearchEnabled".</p>
+        <img src="/images/1007/Screenshot3.jpg" alt="create new DWORD 32-bit key called BingSearchEnabled" id="mainimg">
+        <p class="content1">4. Double click on "BingSearchEnabled" and Make sure that it's value data is "0".</p>
+        <img src="/images/1007/Screenshot4.jpg" alt="make sure value data is 0" id="mainimg">
+        <p class="content1">5. Restart your Computer.</p>
+        <p class="content1">6. And It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+        <p>&ensp;</p>
+
+        <p class="mainhead">Back to Default</p>
+        <p class="content1">1. Follow 1 and 2 step. <br> 2. Delete "BingSearchEnabled" key.</p>
+        <img src="/images/1007/Screenshot11.jpg" alt="delete key" id="mainimg">
+        <p class="content1">3. Restart your Computer</p>
+        <p class="content1">4. And It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+    </section>
+
+</body>
+</html>

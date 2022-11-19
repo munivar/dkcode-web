@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enable Floating Search</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section id="section1" class="section1">
+        <p class="mainhead">How to Enable Floating Search using Registry Editer (Immersive Search)</p>
+        <p class="content1">1. Search and Run Registry Editor.</p>
+        <img src="/images/1009/Screenshot1.jpg" alt="search and run regedit" id="mainimg">
+        <div>
+            <p class="content1">2.Now Paste this Following Path to Registry Editor Address Bar...</p>
+
+            <input class="copytext" type="text" value="Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search"
+                id="myInput">
+            <span id="copypath" class="button" onclick="CopyFunction()">Copy Path</span>
+
+            <script>
+                function CopyFunction() {
+                    var copyText = document.getElementById("myInput");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    document.getElementById("copypath").innerHTML = "Copied";
+                }
+            </script>
+        </div>
+        <img src="/images/1009/Screenshot2.jpg" alt="paste path in regedit" id="mainimg">
+        <p class="content1">3. Right click on "Search" folder and create a new DWORD 32-bit key Called "ImmersiveSearch".</p>
+        <img src="/images/1009/Screenshot3.jpg" alt="create a new key called Immersive search" id="mainimg">
+        <p class="content1">4. Double click on "ImmersiveSearch" and set value data "1".</p>
+        <img src="/images/1009/Screenshot4.jpg" alt="set value data 1" id="mainimg">
+        <p class="content1">5. Now Expand Search Folder and select "Flighting" Folder.</p>
+        <img src="/images/1009/Screenshot5.jpg" alt="select Flighting folder" id="mainimg">
+        <p class="content1">6. Right click on "Flighting" folder and Create New Key Called "Override".</p>
+        <img src="/images/1009/Screenshot6.jpg" alt="Create New Key Called Override" id="mainimg">
+        <p class="content1">7. Now Right Click on Override Folder and Create New 32bit DWORD Key Called "ImmersiveSearchFull".</p>
+        <img src="/images/1009/Screenshot7.jpg" alt="Create New 32bit DWORD Key" id="mainimg">
+        <p class="content1">8. Double click on "ImmersivSearchFull" and Make sure that value data is "0".</p>
+        <img src="/images/1009/Screenshot8.jpg" alt="cheak value data is 0" id="mainimg">
+        <p class="content1">9. Restart your Computer.</p>
+        <p class="content1">7. And It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+        <p>&ensp;</p>
+
+
+
+
+
+
+        <p class="mainhead">Back to Default</p>
+        <p class="content1">1. Follow 1 and 2 step. Delete "Override" folder.</p>
+        <img src="/images/1009/Screenshot11.jpg" alt="delete Override folder" id="mainimg">
+        <p class="content1">2. Delete "ImmersiveSearch" key.</p>
+        <img src="/images/1009/Screenshot12.jpg" alt="delete ImmersiveSearch key" id="mainimg">
+        <p class="content1">3. Restart your Computer. <br> 4. And It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+    </section>
+
+</body>
+</html>

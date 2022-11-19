@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Drives from File Explorer</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section id="section1" class="section1">
+        <p class="mainhead">How to Hide Drives from File Explorer in Windows 10</p>
+        <p class="content1">1. Search and Run Registry Editor as Administrator.</p>
+        <img src="/images/1010/Screenshot1.jpg" alt="search and run regedit as admin" id="mainimg">
+        <div>
+            <p class="content1">2.Now Paste this Following Path to Registry Editor Address Bar...</p>
+
+            <input class="copytext" type="text"
+                value="Computer\HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer"
+                id="myInput">
+            <span id="copypath" class="button" onclick="CopyFunction()">Copy Path</span>
+
+            <script>
+                function CopyFunction() {
+                    var copyText = document.getElementById("myInput");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    document.getElementById("copypath").innerHTML = "Copied";
+                }
+            </script>
+        </div>
+        <img src="/images/1010/Screenshot2.jpg" alt="paste copy path" id="mainimg">
+        <p class="content1">3. Right click on "Explorer" folder and Create new DWORD 32-bit key Called "NoDrives".</p>
+        <img src="/images/1010/Screenshot3.jpg" alt="create new DWORD 32-bit ley called nodrives" id="mainimg">
+        <p class="content1">4. Double click on "NoDrives" and Tick "Decimal" and set value data of your drive (value in
+            Decimal).</p>
+        <p class="content1">
+            <span>--- --- Drive Value in Decimal --- ---</span>
+            <br>A &colon; 1  
+            <br>B &colon; 2  
+            <br>C &colon; 4  
+            <br>D &colon; 8  
+            <br>E &colon; 16  
+            <br>F &colon; 32  
+            <br>G &colon; 64  
+            <br>H &colon; 128  
+            <br>I &colon; 256  
+            <br>J &colon; 512  
+            <br>K &colon; 1024  
+            <br>L &colon; 2048  
+            <br>M &colon; 4096 
+            <br>N &colon; 8192
+            <br>O &colon; 16384
+            <br>P &colon; 32768
+            <br>Q &colon; 65536
+            <br>R &colon; 131072
+            <br>S &colon; 262144
+            <br>T &colon; 524288
+            <br>U &colon; 1048576
+            <br>V &colon; 2097152
+            <br>W &colon; 4194304
+            <br>X &colon; 8388608
+            <br>Y &colon; 16777216
+            <br>Z &colon; 33554432
+            <br>ALL &colon; 67108863
+            <br><span>--- --- --- --- --- --- --- --- --- ---</span>
+        </p>
+        <p class="content1">5. In my case I want to Hide "Drive &colon; X". so, i was set value data "8388608" and click on "OK". <br> Don't forget to tick "Decimal" in Base.</p>
+        <img src="/images/1010/Screenshot4.jpg" alt="set value data" id="mainimg">
+        <img src="/images/1010/Screenshot5.jpg" alt="hide drive x" id="mainimg">
+        <p class="content1">6. Restart your Computer. <br> 7. And it's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+
+
+
+
+
+        <p class="mainhead">Hide Multiple Drives</p>
+        <p class="content1">1. If you want hide Multiple Drives. so, you can First get total of your two Drives. You can done this with 2 and more Drives.</p>
+        <p class="content1">2. In my case I want to hide My C and X Drives.</p>
+        <img src="/images/1010/Screenshot6.jpg" alt="hide multiple drive" id="mainimg">
+        <p class="content1">3. so, The total of C and X drive is "8388612". Now, Enter this Total in value data. <br> Make sure to tick "Desimal" base.</p>
+        <img src="/images/1010/Screenshot7.jpg" alt="set value data" id="mainimg">
+        <p class="content1">4. Restart your Computer. <br> 5. And It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+
+
+
+
+
+
+        <p class="mainhead">Unhide Drives</p>
+        <p class="content1">1. Simply, Delete the "NoDrives" Key.</p>
+        <img src="/images/1010/Screenshot11.jpg" alt="unhide drive" id="mainimg">
+        <p class="content1">2. Restart your Computer and Your Drives Unhide Sucessfully. <br> 3. And it's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+    </section>
+
+</body>
+
+</html>

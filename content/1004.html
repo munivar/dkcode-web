@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permanent Desktop Background Wallpaper in Windows</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section id="section1" class="section1">
+        <p id="mainhead" class="mainhead">How to Permanently Set Desktop Background in Windows</p>
+        <p class="content1">1. Search and Run the Registry Editor.</p>
+        <img src="/images/1004/Screenshot1.jpg" alt="Run Registry Editor" id="mainimg">
+        <div>
+            <p class="content1">2.Now Paste this Following Path to Registry Editor Address Bar...</p>
+
+            <input class="copytext" type="text" value="Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies" id="myInput">
+            <span id="copypath" class="button" onclick="CopyFunction()">Copy Path</span>
+
+            <script>
+                function CopyFunction() {
+                    var copyText = document.getElementById("myInput");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    document.getElementById("copypath").innerHTML = "Copied";
+                }
+            </script>
+        </div>
+        <img src="/images/1004/Screenshot2.jpg" alt="Paste the path" id="mainimg">
+        <p class="content1">3. Right click on "Policies" folder and Create a new Key called "System".</p>
+        <img src="/images/1004/Screenshot3.jpg" alt="create a new key called System" id="mainimg">
+        <p class="content1">4. Right click on "System" folder and Create new String Value called "Wallpaper".</p>
+        <img src="/images/1004/Screenshot4.jpg" alt="create new string value called Wallpaper" id="mainimg">
+        <p class="content1">5. Now Copy your Desktop Wallpaper Image Path. In my case my wallpaper is in Download Folder. so, i can copy my Image like this ... <br> (Select image and Under home tab click on "Copy Path".</p>
+        <img src="/images/1004/Screenshot5.jpg" alt="copy image path location" id="mainimg">
+        <p class="content1">6. Go back to Registry Editor. Double click on "Wallpaper" and Under the Value Data , Paste the Image Location. <br> Make sure to remove ("")Cortation Mark and Click on "OK".</p>
+        <img src="/images/1004/Screenshot6.jpg" alt="paste img location and remove Cortation mark" id="mainimg">
+        <p class="content1">7. Restart your Computer <br> 8. And It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+        <p>&ensp;</p>
+
+
+
+
+
+        <p class="mainhead">Back to Default</p>
+        <p class="content1">1. Follow 1 and 2 Step and Delete "System" folder.</p>
+        <img src="/images/1004/Screenshot11.jpg" alt="delete system folder" id="mainimg">
+        <p class="content1">2. Restart yout Computer <br> 3. And It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+
+    </section>
+
+</body>
+</html>

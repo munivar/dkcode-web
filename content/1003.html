@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Login Screen</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section1 id="section1" class="section1">
+        <p id="mainhead" class="mainhead">Direct Login Password Screen (Skip Blurry Lock Screen)</p>
+        <p class="content">I was Never a Fan of The Blurry Lock Screen. It Forces an Additional Swipe-up or Button Click before you can Enter a Password. I will Show you How to Disable it.</p>
+        <p class="content1">1. Search Registry Editor And Run the Registry Editor</p>
+        <img id="mainimg" src="/images/1003/Screenshot1.jpg"
+            alt="Search and Run Registry Editor">
+        <div>
+            <p class="content1">2.Now Paste this Following Path to Registry Editor Address Bar...</p>
+
+            <input class="copytext" type="text" value="HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows"
+                id="myInput">
+            <span id="copypath" class="button" onclick="CopyFunction()">Copy Path</span>
+
+            <script>
+                function CopyFunction() {
+                    var copyText = document.getElementById("myInput");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    document.getElementById("copypath").innerHTML = "Copied";
+                }
+            </script>
+        </div>
+        <img id="mainimg" src="/images/1003/Screenshot2.jpg" alt="Copy and Paste Path">
+        <p class="content1">3. Now Right Click on "Windows" folder and Create a New Key Called "Personalization". Skip This step If "Personalization" Folder is Already Available.</p>
+        <img src="/images/1003/Screenshot3.jpg" alt="Create a Personalization Folder" id="mainimg">
+        <p class="content1">4. Right Click on "Personalization" folder and Create a New DWORD 32-bit Key Called "NoLockScreen".</p>
+        <img src="/images/1003/Screenshot4.jpg" alt="New DWORD Key Called NoLockscreen" id="mainimg">
+        <p class="content1">5. Double Click on "NoLockScreen" key and Set Value Data "1" and Click on "OK".</p>
+        <img src="/images/1003/Screenshot5.jpg" alt="New DWORD Key Called NoLockscreen" id="mainimg">
+        <p class="content1">6. Restart your Computer.
+            <br>7. It's Done.
+        </p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+        <p>&ensp;</p>
+
+
+
+
+
+
+        <p class="mainhead">Back to Default</p>
+        <p class="content1">1. Follow 1 and 2 Step and In Personalization Folder, Delete the "NoLockScreen" Key.</p>
+        <img src="/images/1003/Screenshot11.jpg" alt="Delete The DWORD Key" id="mainimg">
+        <p class="content1">2. Restart your Computer.
+            <br> 3. And It's Done.
+        </p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+    </section1>
+
+
+</body>
+</html>

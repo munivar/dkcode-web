@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CopyTo-MoveTo option in Windows Context Menu</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section class="section1" id="section1">
+        <p class="mainhead">How to Add CopyTo-MoveTo option in Windows Context Menu (Right Click Option)</p>
+        <p class="content">Some People like me is upset with Windows Copy-Paste Option. like open one windows and copy file and open paste location. it's time Consuming process, is't it? so, I will Add CopyTo-MoveTo Shortcut in my windows context menu.</p>
+        <p class="content1">1. Search and Run Registry Editor.</p>
+        <img src="/images/1006/Screenshot1.jpg" alt="search and run registry editor" id="mainimg">
+        <div>
+            <p class="content1">2.Now Paste this Following Path to Registry Editor Address Bar...</p>
+
+            <input class="copytext" type="text" value="Computer\HKEY_CLASSES_ROOT\AllFilesystemObjects\shellex\ContextMenuHandlers" id="myInput">
+            <span id="copypath" class="button" onclick="CopyFunction()">Copy Path</span>
+
+            <script>
+                function CopyFunction() {
+                    var copyText = document.getElementById("myInput");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    document.getElementById("copypath").innerHTML = "Copied";
+                }
+            </script>
+        </div>
+        <img src="/images/1006/Screenshot2.jpg" alt="paste path in regedit" id="mainimg">
+        <p class="content1">3. Right click on "ContextMenuHandlers" and Create a new key called "CopyTo".</p>
+        <img src="/images/1006/Screenshot3.jpg" alt="create new key called copytp" id="mainimg">
+        <p class="content1">4. On Right side Double click on "Default" and Set Value Data <br> "&lcub;C2FBB630-2971-11D1-A18C-00C04FD75D13&rcub;" and click on "OK".</p>
+        <img src="/images/1006/Screenshot4.jpg" alt="set value data" id="mainimg">
+        <p class="content1">5. Right click on "ContextMenuHandlers" and Create a new key called "MoveTo".</p>
+        <img src="/images/1006/Screenshot5.jpg" alt="create moveto key" id="mainimg">
+        <p class="content1">6. On Right side Double click on "Default" and Set Value Data <br> "&lcub;C2FBB631-2971-11D1-A18C-00C04FD75D13&rcub;" and click on "OK".</p>
+        <img src="/images/1006/Screenshot6.jpg" alt="set valu data" id="mainimg">
+        <p class="content1">7. Restart your Computer.</p>
+        <p class="content1">Note: To Cheak it Works on Not, Please Right click on Any file/Folder.</p>
+        <p class="content1">8. It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+        <p>&ensp;</p>
+
+
+
+
+
+        <p class="mainhead">Back to Default</p>
+        <p class="content1">1. Follow step 1 and 2. <br> 2. Delete CopyTo and MoveTo folder.</p>
+        <img src="/images/1006/Screenshot11.jpg" alt="delete copyto-moveto folder" id="mainimg">
+        <p class="content1">2. Restart your Computer.</p>
+        <p class="content1">3. It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+
+    </section>
+    
+
+</body>
+</html>

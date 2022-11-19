@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Grub Bootloader</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section id="section1" class="section1">
+        <p class="mainhead">How to Remove Any Grub Bootloader from Windows Startup</p>
+        <p class="content">Sometime, People try new OS(Oprating System) like Linux,Android Emulator. this all OS comes with Grub/Grub2 Bootloader, Bootloader help to swith one OS to Another in Dual boot. Now, Some People need back to Default setting. so, they delete another OS but the problem is Grub is not delete Automatically. Grub is Menually Deletion Process. so, I am going to show you how to delete grub bootloader from startup...</p>
+        <p class="content1">1. Open CMD (Command Prompt) as Administrator.</p>
+        <img src="/images/1011/Screenshot1.jpg" alt="open cmd as admin" id="mainimg">
+        <p class="content1">2. Go to <strong>"diskpart"</strong>.</p>
+        <p class="content1">3. Now type <strong>"list volume"</strong>.</p>
+        <img src="/images/1011/Screenshot2.jpg" alt="type diskpart and list volume" id="mainimg">
+        <p class="content1">4. select "System" volume by typing Volume number. in my case system volume number is "5". so, type <strong>"select volume 5"</strong> and hit <strong>"Enter"</strong>.</p>
+        <p class="content1">5. now assign any letter you want, in my case i want to assign letter "M" by Typing <strong>"assign letter=m"</strong>.</p>
+        <img src="/images/1011/Screenshot3.jpg" alt="assign letter m" id="mainimg">
+        <p class="content1">6. Go to Task Manager.</p>
+        <img src="/images/1011/Screenshot4.jpg" alt="go to taskmanager" id="mainimg">
+        <p class="content1">7. Create New Task by clicking top left side "File" button.</p>
+        <img src="/images/1011/Screenshot5.jpg" alt="" id="mainimg">
+        <p class="content1">8. Now click on "Browse".</p>
+        <img src="/images/1011/Screenshot6.jpg" alt="" id="mainimg">
+        <p class="content1">9. Navigate EFI folder in your "M" letter assigned Drive and Delete the OS name Folder.</p>
+        <img src="/images/1011/Screenshot7.jpg" alt="" id="mainimg">
+        <p class="content1">10. Now get Back to CMD and Remove letter "M" by Typing <strong>"remove letter=m"</strong>. And hit "Enter".</p>
+        <img src="/images/1011/Screenshot8.jpg" alt="" id="mainimg">
+        <p class="content1">11. Restart your Computer <br> 12. And It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+    </section>
+
+</body>
+
+</html>

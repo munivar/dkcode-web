@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bypass TPM 2.0 and Secure Boot</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Main/favicon.ico" />
+    <link rel="stylesheet" href="/content/1000.css">
+    <script src="/dark-theme.js"></script>
+</head>
+
+<body id="body">
+    <section id="navbar" class="navbar">
+        <div class="nav">
+            <a id="logo" class="logo menu" href="/index.html">dkcode</a>
+            <!-- <a class="menu" href="/windows.html">Windows</a>
+            <a class="menu" href="/android.html">Android</a>
+            <a class="menu" href="/howto.html">HowTo</a> -->
+        </div>
+        <div class="nav-right">
+            <input onclick="toggledark()" type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" id="themebox" class="themebox">
+                <i class="sun"><img src="/images/Main/sun.png" alt=""></i>
+                <i class="moon"><img src="/images/Main/moon.png" alt=""></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </section>
+
+    <section id="section1" class="section1">
+        <p class="mainhead">How to Bypass TPM 2.0 and Secure Boot cheaking when Installing Windows 11</p>
+        <p class="content">After Launching Windows 11, Microsoft Set Some Compatibility in Windows 11. Some Old PC like My Computer not fill this Compatibility. So, What can we do?  The Answer is Run Windwos 11 without cheaking TPM 2.0 and Secure Boot.</p>
+        <p class="content1">1. Download Windows 11 .iso file and Create a Bootable Pendrive Using Rufus. Rufus is helping to create a Bootable Pendrive. Cheak MBR and GPT Partition Style and Create Bootable Pendrive using Windows 11 .iso file.</p>
+        <p class="content1">2. Before Booting Pendrive in your System. Make sure to Backtup All your Important Data.</p>
+        <p class="content1">3. Boot Pendrive to Your PC. When boot screen Appear, Press (Shift+F10). It will open "Command Prompt".</p>
+        <img src="/images/1005/Screenshot1.jpg" alt="Boot Screen" id="mainimg">
+        <p class="content1">4. Type "regedit" in CMD to Open Registry Editor.</p>
+        <img src="/images/1005/Screenshot2.jpg" alt="Open Registry Editor" id="mainimg">
+        <p class="content1">5. Go to &lsqb; HKEY_LOCAL_MACHINE &gt; SYSTEM &gt; Setup &rsqb;</p>
+        <img src="/images/1005/Screenshot3.jpg" alt="go to location" id="mainimg">
+        <p class="content1">6. Now Right click on "Setup" folder and Create a new key called "LabConfig".</p>
+        <img src="/images/1005/Screenshot4.jpg" alt="create new key called LabConfig" id="mainimg">
+        <p class="content1">7. Right click on "LabConfig" and Create a New DWORD 32-bit key called "BypassTPMCheak".</p>
+        <img src="/images/1005/Screenshot5.jpg" alt="create new DWORD 32-bit key called BypassTPMCheak" id="mainimg">
+        <p class="content1">8. Double click on "BypassTPMCheak" and set Value data "1" and click on "OK".</p>
+        <img src="/images/1005/Screenshot6.jpg" alt="set value 1" id="mainimg">
+        <p class="content1">9. Now Right click on "LabConfig" and Create a New DWORD 32-bit key called "BypassSecureBootCheak".</p>
+        <img src="/images/1005/Screenshot7.jpg" alt="create a new DWORD 32-bit key" id="mainimg">
+        <p class="content1">10. Double click on "BypassSecureBootCheak" and set Value data "1" and click on "OK".</p>
+        <img src="/images/1005/Screenshot8.jpg" alt="set value data 1" id="mainimg">
+        <p class="content1">11. Close Registry Editor and Command Prompt. <br> 12. And you are Good to go for Installation.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+        <p>&ensp;</p>
+
+        <p class="mainhead">Back to Default</p>
+        <p class="content1">1. Search and Run Registry Editor in your windows 11 installed Computer.</p>
+        <img src="/images/1005/Screenshot11.jpg" alt="search and run registry editor" id="mainimg">
+        <p class="content1">2. Go to &lsqb; HKEY_LOCAL_MACHINE &gt; SYSTEM &gt; Setup &rsqb; and Delete "LabConfig" folder.</p>
+        <img src="/images/1005/Screenshot12.jpg" alt="delete labconfig folder" id="mainimg">
+        <p class="content1">3. Restart your PC and It's Done.</p>
+        <span class="dashed-line">--- --- --- --- --- --- --- ---</span>
+
+    </section>
+
+</body>
+</html>
